@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.usc.lk/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.usc.lk/">
+
+<xs:element name="search" type="tns:search"/>
+
+<xs:element name="searchResponse" type="tns:searchResponse"/>
+
+<xs:complexType name="commonResponse">
+<xs:sequence>
+<xs:element name="data" type="xs:anyType" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicleDto">
+<xs:sequence>
+<xs:element name="adId" type="xs:int"/>
+<xs:element name="addedBy" type="xs:string" minOccurs="0"/>
+<xs:element name="brand" type="xs:string" minOccurs="0"/>
+<xs:element name="capacity" type="xs:string" minOccurs="0"/>
+<xs:element name="contactName" type="xs:string" minOccurs="0"/>
+<xs:element name="contactNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:string" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="fuelType" type="xs:string" minOccurs="0"/>
+<xs:element name="img1" type="xs:string" minOccurs="0"/>
+<xs:element name="img2" type="xs:string" minOccurs="0"/>
+<xs:element name="img3" type="xs:string" minOccurs="0"/>
+<xs:element name="location" type="xs:string" minOccurs="0"/>
+<xs:element name="mileage" type="xs:string" minOccurs="0"/>
+<xs:element name="model" type="xs:string" minOccurs="0"/>
+<xs:element name="modelYear" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="transmission" type="xs:string" minOccurs="0"/>
+<xs:element name="updateAt" type="xs:string" minOccurs="0"/>
+<xs:element name="urlLink" type="xs:string" minOccurs="0"/>
+<xs:element name="usedType" type="xs:string" minOccurs="0"/>
+<xs:element name="website" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="search">
+<xs:sequence>
+<xs:element name="model" type="xs:string" minOccurs="0"/>
+<xs:element name="api" type="xs:string" minOccurs="0"/>
+<xs:element name="brand" type="xs:string" minOccurs="0"/>
+<xs:element name="location" type="xs:string" minOccurs="0"/>
+<xs:element name="usedType" type="xs:string" minOccurs="0"/>
+<xs:element name="fuelType" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:commonResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehicleDtoArray" final="#all">
+<xs:sequence>
+<xs:element name="item" type="tns:vehicleDto" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
